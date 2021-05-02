@@ -52,6 +52,11 @@ install_deps() {
         sed -e 's/.*depends=//' -e 's/ /\n/g' | \
         tr -d "'" | tr -d "(" | tr -d ")" | \
         xargs yay -S --noconfirm
+    yay -S jdk --noconfirm
+
+    sudo archlinux-java set java-16-jdk
+
+    export PATH=$PATH:/usr/lib/jvm/java-16-jdk/bin/
 }
 
 case $target in
